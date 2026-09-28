@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pertemuan 5: Ciri-Ciri Bangun Ruang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#5b4bdb;--b:#8b5cf6;--p:#ec4899;--y:#fbbf24;--t:#231f4d;--ok:#12a150;--no:#e5484d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:var(--t);min-height:100vh;background:linear-gradient(160deg,#dfe6ff,#efe3ff 50%,#ddf3ff);background-attachment:fixed;overflow-x:hidden}
+h1,h2,h3,.fx{font-family:'Baloo 2',Nunito,system-ui,sans-serif}
+.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.45;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:#a78bfa;top:-80px;left:-80px}.b2{width:300px;height:300px;background:#f9a8d4;bottom:-60px;right:-60px;animation-delay:-5s}.b3{width:240px;height:240px;background:#7dd3fc;top:45%;left:60%;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.15)}}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(90deg,#4338ca,#7c3aed,#c026d3);color:#fff;padding:10px 16px 12px;box-shadow:0 4px 18px #4338ca55}
+.hr{display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto}
+.hr b{font-size:17px}.pts{background:#ffffff2e;border-radius:99px;padding:3px 12px;font-weight:800;font-size:14px}
+.stp{display:flex;max-width:960px;margin:8px auto 0;gap:6px}
+.stp span{flex:1;text-align:center;font-size:11px;font-weight:800;opacity:.6;transition:.3s}.stp span.on{opacity:1}.stp span.dn{opacity:.9}
+.bar{max-width:960px;margin:5px auto 0;height:9px;background:#ffffff33;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#fde68a,#fbbf24);border-radius:9px;transition:width .6s}
+main{max-width:960px;margin:0 auto;padding:18px}
+.step{display:none;animation:in .55s cubic-bezier(.2,.9,.3,1.2)}.step.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.card{background:#ffffffd9;backdrop-filter:blur(10px);border:1px solid #fff;border-radius:26px;padding:24px;box-shadow:0 12px 40px #5b4bdb26;margin-bottom:18px}
+.hero{text-align:center;position:relative;overflow:hidden;padding:34px 22px}
+.hero .ic{display:flex;justify-content:center;gap:6px;margin-bottom:8px}.hero .ic svg{width:74px;height:74px;animation:fl 3.2s ease-in-out infinite}
+.hero .ic svg:nth-child(2){animation-delay:-.6s}.hero .ic svg:nth-child(3){animation-delay:-1.2s}.hero .ic svg:nth-child(4){animation-delay:-1.8s}.hero .ic svg:nth-child(5){animation-delay:-2.4s}
+@keyframes fl{50%{transform:translateY(-12px) rotate(4deg)}}
+.grad{background:linear-gradient(90deg,#4f46e5,#c026d3,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-size:clamp(28px,6vw,42px);margin:.1em 0}h2{font-size:clamp(22px,4vw,30px);margin:.2em 0}
+.tag{display:inline-block;background:linear-gradient(90deg,var(--a),var(--b));color:#fff;padding:4px 14px;border-radius:99px;font-size:13px;font-weight:800}
+label{display:block;font-weight:800;margin:16px 0 6px;text-align:left}
+input{width:100%;padding:14px 16px;border:2.5px solid #ddd8fb;border-radius:16px;font:600 16px Nunito,sans-serif;background:#fff;transition:.2s}
+input:focus{outline:none;border-color:var(--b);box-shadow:0 0 0 5px #8b5cf62e}
+.form{max-width:420px;margin:0 auto}
+.btn{background:linear-gradient(90deg,var(--a),var(--b),var(--p));background-size:200%;color:#fff;border:0;padding:15px 30px;border-radius:16px;font:800 17px 'Baloo 2',sans-serif;cursor:pointer;transition:.25s;margin-top:18px;box-shadow:0 6px 0 #3f33a8}
+.btn:hover:not(:disabled){transform:translateY(-3px);background-position:100%;box-shadow:0 9px 0 #3f33a8}
+.btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 2px 0 #3f33a8}
+.btn:disabled{background:#c9c6e3;box-shadow:0 6px 0 #aaa7c6;cursor:not-allowed}
+.sec{display:flex;align-items:center;gap:10px;margin-bottom:6px}.sec .n{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--a),var(--p));color:#fff;display:grid;place-items:center;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.shape{--c:#6c8cff;position:relative;text-align:center;background:#fff;border-radius:22px;padding:18px 14px;border:2.5px solid transparent;background-clip:padding-box;box-shadow:0 8px 24px #0001;transition:.3s;cursor:pointer;overflow:hidden}
+.shape::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,var(--c),transparent 70%);opacity:.18}
+.shape:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 16px 34px #0002}
+.shape svg{width:130px;height:130px;position:relative;filter:drop-shadow(0 10px 8px #0003);transition:.5s}.shape:hover svg,.shape.open svg{transform:scale(1.1) rotate(-6deg)}
+.shape h3{margin:2px 0 6px;font-size:26px;color:var(--c);position:relative}
+.chip{display:inline-block;background:#f1efff;border:1px solid #e0dcff;border-radius:99px;padding:4px 11px;font-size:13px;font-weight:700;margin:3px}
+.ket{max-height:0;overflow:hidden;transition:max-height .45s;position:relative}.shape.open .ket{max-height:120px}
+.ket p{margin:8px 0 2px;background:#fffbe6;border:2px dashed var(--y);border-radius:14px;padding:8px 10px;font-size:14px}
+.easy{position:relative;text-align:left;margin:10px 0 4px;background:linear-gradient(135deg,#fff7d6,#ffeaf4);border-radius:18px;padding:12px 14px;border:2px solid #ffe08a}
+.easy .ez{font-family:'Baloo 2';font-weight:800;color:var(--c);font-size:16px}.easy p{margin:2px 0 6px;font-size:15px;font-weight:600}
+.easy .bd{font-size:14px;font-weight:800}.easy .cnt{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.easy .cnt span{background:#fff;border-radius:12px;padding:4px 10px;font-size:13px;font-weight:800;border:1.5px solid #f3d98a}
+.gl{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:8px 0 6px}
+.gl div{background:#fff;border-radius:18px;padding:12px 14px;border:2.5px solid #e0dcff;font-size:15px;font-weight:600}
+.gl b{display:block;font-family:'Baloo 2';font-size:19px;color:var(--a)}
+.lab{background:linear-gradient(135deg,#f3f0ff,#fff0f8);border:2.5px solid #ddd8fb;border-radius:22px;padding:16px;margin:16px 0}
+.lab h3{margin:0 0 10px;font-size:22px}
+.pick{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.pick button{border:2.5px solid #ddd8fb;background:#fff;border-radius:99px;padding:6px 14px;font:800 14px Nunito,sans-serif;color:var(--t);cursor:pointer;transition:.2s}
+.pick button:hover{border-color:var(--b)}.pick button.on{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;border-color:transparent}
+.pick.tb button{font-size:15px;padding:8px 16px}.pick.tb button.on{background:linear-gradient(90deg,#e11d48,#f97316)}
+.lw{display:grid;grid-template-columns:minmax(220px,1fr) 1.2fr;gap:14px;align-items:center}
+@media(max-width:640px){.lw{grid-template-columns:1fr}}
+.lsv{width:100%;max-height:300px;background:#fff;border-radius:18px;border:2px solid #e8e4ff;animation:in .4s}
+.cap{background:#fff;border-radius:18px;padding:14px 16px;font-size:16px;font-weight:600;line-height:1.55;border-left:8px solid var(--b)}
+.mus{display:none!important;position:fixed;left:14px;bottom:14px;z-index:15;display:flex;align-items:center;gap:8px;background:#ffffffe8;backdrop-filter:blur(8px);border-radius:99px;padding:6px 10px;box-shadow:0 6px 20px #5b4bdb44;border:2px solid #ddd8fb}
+.mus button{width:38px;height:38px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--a),var(--p));color:#fff;font-size:18px;cursor:pointer;transition:.2s}
+.mus button:hover{transform:scale(1.1)}.mus.on button{animation:bt 1s ease-in-out infinite}@keyframes bt{50%{transform:scale(1.14)}}
+.mus input{width:80px;padding:0;accent-color:var(--b)}.mus small{font-weight:800;font-size:12px}
+.hn{font-size:12px;color:#7a78a0;position:relative;display:block;margin-top:6px}
+.tw{overflow-x:auto;border-radius:16px}table{border-collapse:separate;border-spacing:0;width:100%;min-width:580px}
+th{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;padding:12px;font-family:'Baloo 2';font-size:16px}
+td{padding:12px;text-align:center;border-bottom:1px solid #ebe8ff;background:#fff;transition:.2s}tr:nth-child(even) td{background:#f8f7ff}tr:hover td{background:#fff4c9}
+.end{text-align:center}
+.q{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.dots{display:flex;gap:5px;flex-wrap:wrap}.dots i{width:14px;height:14px;border-radius:50%;background:#ddd8fb;transition:.3s}.dots i.now{background:var(--b);transform:scale(1.3)}.dots i.c{background:var(--ok)}.dots i.w{background:var(--no)}
+.qt{font-size:clamp(20px,4vw,26px);margin:14px 0}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:14px;margin:10px 0;border:2.5px solid #ddd8fb;background:#fff;border-radius:16px;font:700 17px Nunito,sans-serif;color:var(--t);cursor:pointer;transition:.2s;animation:in .4s backwards}
+.opt b{width:34px;height:34px;border-radius:10px;background:#ece9ff;color:var(--a);display:grid;place-items:center;flex:none;font-family:'Baloo 2'}
+.opt:hover:not(:disabled){border-color:var(--b);transform:translateX(6px);background:#f7f5ff}.opt:disabled{cursor:default}
+.opt.c{background:#e3f8ec;border-color:var(--ok)}.opt.c b{background:var(--ok);color:#fff}
+.opt.w{background:#ffe8e9;border-color:var(--no);animation:shk .4s}.opt.w b{background:var(--no);color:#fff}
+@keyframes shk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.modal{position:fixed;inset:0;background:#1d1a4a99;backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:16px;z-index:20}.modal.on{display:flex}
+.mb{background:#fff;border-radius:28px;padding:26px;max-width:460px;width:100%;animation:pop .45s cubic-bezier(.2,1.4,.4,1);border-top:8px solid var(--ok)}.mb.bad{border-top-color:var(--no)}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.big{font-size:62px;text-align:center;line-height:1.1}
+.score{font-family:'Baloo 2';font-size:84px;font-weight:800;text-align:center;line-height:1}
+.stars{text-align:center;font-size:44px;margin:6px 0}.stars span{display:inline-block;filter:grayscale(1) opacity(.35);transition:.5s}.stars span.on{filter:none;animation:pop .6s backwards}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}.st{padding:10px 18px;border-radius:14px;background:#f1efff;font-weight:800}
+.ms{text-align:center;font-weight:800;font-size:18px;margin-top:16px;background:linear-gradient(90deg,#ede9fe,#fce7f3);padding:14px;border-radius:16px}
+#note{font-size:13px;margin-top:12px;text-align:center}
+#cf{position:fixed;inset:0;pointer-events:none;z-index:30}
+</style></head><body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><canvas id="cf"></canvas>
+<header><div class="hr"><b class="fx">📐 Pertemuan 5: Ciri-Ciri Bangun Ruang</b><span class="pts" id="pt">⭐ 0</span></div>
+<div class="stp" id="stp"><span>① Identitas</span><span>② Materi</span><span>③ Kuis</span><span>④ Hasil</span></div><div class="bar"><i id="pb"></i></div></header>
+<main>
+
+<section class="step on" id="s1"><div class="card hero">
+<div class="ic" id="ic"></div><span class="tag">✨ Media Belajar Interaktif</span>
+<h1 class="grad">Yuk, Kenali Bangun Ruang!</h1>
+<p>Belajar ciri-ciri kubus, balok, tabung, kerucut, dan bola dengan seru. Isi datamu dulu ya!</p>
+<div class="form"><label for="nm">👤 Nama Lengkap</label><input id="nm" placeholder="Contoh: Aisyah Putri" autocomplete="name">
+<label for="kl">🏫 Kelas</label><input id="kl" placeholder="Contoh: 5A">
+<button class="btn" id="go" disabled>Mulai Pembelajaran 🚀</button></div></div></section>
+
+<section class="step" id="s2"><div class="card">
+<div class="sec"><div class="n">📘</div><div><span class="tag">Materi</span><h2 class="grad" style="margin:0">Pertemuan 5: Ciri-Ciri Bangun Ruang</h2></div></div>
+<div class="gl"><div><b>🧵 Rusuk</b>Garis pinggir bangun ruang, seperti rangka atau tulangnya.</div><div><b>🟦 Sisi</b>Permukaan yang bisa kamu pegang. Ada yang rata, ada yang melengkung.</div><div><b>📍 Titik Sudut</b>Pojok atau ujung yang runcing, tempat garis-garis bertemu.</div></div>
+<div class="lab"><h3 class="grad">🔍 Temukan Bagian-Bagiannya!</h3>
+<p style="margin:0 0 10px;font-weight:700">Pilih bangun ruang, lalu ketuk tombol Rusuk, Sisi, atau Titik Sudut untuk melihat letaknya pada gambar.</p>
+<div class="pick" id="lp"></div><div class="pick tb" id="lt"></div>
+<div class="lw"><div id="lsv"></div><div class="cap" id="lcap"></div></div></div>
+<p style="margin:14px 0 16px">Ketuk setiap kartu untuk melihat keterangannya. Gulir sampai bawah untuk membuka kuis!</p>
+<div class="grid" id="cards"></div></div>
+<div class="card"><div class="sec"><div class="n">📊</div><h2 style="margin:0">Tabel Ringkasan</h2></div><div class="tw"><table id="tb"></table></div></div>
+<div class="card end"><p id="hint" style="font-weight:800">⬇️ Baca materi sampai bagian ini untuk membuka kuis.</p>
+<div id="end" style="height:2px"></div><button class="btn" id="toq" disabled>Lanjut ke Kuis ✏️</button></div></section>
+
+<section class="step" id="s3"><div class="card">
+<div class="q"><span class="tag" id="qn"></span><div class="dots" id="dots"></div></div>
+<h2 class="qt" id="qt"></h2><div id="qo"></div>
+<div style="text-align:center"><button class="btn" id="nx" style="display:none">Soal Selanjutnya ➡️</button></div></div></section>
+
+<section class="step" id="s4"><div class="card">
+<div class="big" id="em">🎉</div><h2 style="text-align:center" class="grad" id="rn"></h2><p style="text-align:center;margin:0" id="rk"></p>
+<div class="stars" id="stars"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+<div class="score grad" id="sc">0</div><p style="text-align:center;margin:0;font-weight:800">Nilai Akhir</p>
+<div class="row"><span class="st" style="color:var(--ok)" id="rb"></span><span class="st" style="color:var(--no)" id="rw"></span></div>
+<div class="ms" id="ms"></div><p id="note"></p>
+<div style="text-align:center"><button class="btn" onclick="location.reload()">Ulangi Belajar 🔁</button></div></div></section>
+</main>
+
+<div class="mus" id="mus"><button id="mb" title="Musik">🎵</button><input type="range" id="mv" min="0" max="100" value="55" aria-label="Volume"><small id="ml">Musik: mati</small></div>
+<div class="modal" id="md"><div class="mb" id="mbx"><div class="big" id="mi"></div><h2 id="mt" style="text-align:center"></h2><p id="mx" style="font-size:16px"></p>
+<div style="text-align:center"><button class="btn" id="mc">Mengerti 👍</button></div></div></div>
+
+<script>
+// ====== PENGATURAN ======
+// Tempel URL Web App Google Apps Script (berakhiran /exec) di sini:
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzkX_oQvz_6F1wapS5lJ9vK24GHh3zgeBAJxeVDIwhMkfB1rPlL628BpR5kwMYOmFB5/exec";
+// ========================
+const $=id=>document.getElementById(id);
+const S={
+kubus:`<svg viewBox="0 0 100 100"><path d="M20 35h45v45H20z" fill="#6c8cff"/><path d="M20 35l15-15h45L65 35z" fill="#b9c8ff"/><path d="M65 35l15-15v45L65 80z" fill="#3f5bd0"/><path d="M24 39h12v6H24z" fill="#fff" opacity=".35"/></svg>`,
+balok:`<svg viewBox="0 0 100 100"><path d="M8 42h57v38H8z" fill="#b07cf0"/><path d="M8 42l20-20h57L65 42z" fill="#dcc2fb"/><path d="M65 42l20-20v38L65 80z" fill="#7d45cf"/><path d="M12 46h16v6H12z" fill="#fff" opacity=".35"/></svg>`,
+tabung:`<svg viewBox="0 0 100 100"><path d="M22 25v50a28 9 0 0 0 56 0V25z" fill="#2fa99b"/><path d="M62 30v50a28 9 0 0 0 16-5V25z" fill="#1f7f74" opacity=".55"/><ellipse cx="50" cy="25" rx="28" ry="9" fill="#96e6da"/><path d="M28 35v34" stroke="#fff" stroke-width="4" opacity=".3" stroke-linecap="round"/></svg>`,
+kerucut:`<svg viewBox="0 0 100 100"><path d="M50 10L80 78a30 9 0 0 1-60 0z" fill="#ff8f4a"/><path d="M50 10L80 78a30 9 0 0 1-22 8z" fill="#e0692a" opacity=".55"/><path d="M50 10L20 78a30 9 0 0 0 8 6z" fill="#ffc49a" opacity=".5"/><ellipse cx="50" cy="78" rx="30" ry="9" fill="#ffd4b0" opacity=".35"/></svg>`,
+bola:`<svg viewBox="0 0 100 100"><defs><radialGradient id="rg" cx=".35" cy=".3"><stop offset="0" stop-color="#ffe0ea"/><stop offset=".5" stop-color="#f0648f"/><stop offset="1" stop-color="#b0225a"/></radialGradient></defs><circle cx="50" cy="50" r="36" fill="url(#rg)"/><ellipse cx="38" cy="34" rx="9" ry="5" fill="#fff" opacity=".55" transform="rotate(-35 38 34)"/></svg>`};
+const COL={kubus:"#4f6df0",balok:"#9b5de5",tabung:"#1f9e90",kerucut:"#f47a2a",bola:"#e0407a"};
+const D=[
+{n:"Kubus",k:"kubus",r:"12 rusuk (sama panjang)",s:"6 sisi (persegi)",t:"8 titik sudut",e:"Semua sisinya berbentuk persegi sama luas."},
+{n:"Balok",k:"balok",r:"12 rusuk",s:"6 sisi (segi empat)",t:"8 titik sudut",e:"Sisi yang berhadapan sama luas."},
+{n:"Tabung",k:"tabung",r:"2 rusuk lengkung",s:"3 sisi",t:"0 titik sudut",e:"Alas dan tutup berbentuk lingkaran."},
+{n:"Kerucut",k:"kerucut",r:"1 rusuk lengkung",s:"2 sisi",t:"1 titik puncak (tanpa titik sudut)",e:"Alas berbentuk lingkaran dan ada 1 titik puncak."},
+{n:"Bola",k:"bola",r:"0 rusuk",s:"1 sisi lengkung",t:"0 titik sudut",e:"Hanya memiliki 1 sisi lengkung."}];
+const EZ={
+kubus:{p:"Kubus itu seperti dadu. Semua sisinya berbentuk persegi (kotak) yang sama besar!",b:"🎲 dadu, 🎁 kotak kado, 🧊 es batu",h:["Hitung yuk:","6 sisi kotak","12 garis pinggir","8 pojok","Menggelinding? ❌ Tidak"]},
+balok:{p:"Balok itu seperti kardus atau kotak susu. Bentuknya kotak yang memanjang. Sisi yang berhadapan sama besar!",b:"📦 kardus, 🥛 kotak susu, 🧱 batu bata",h:["Hitung yuk:","6 sisi","12 garis pinggir","8 pojok","Menggelinding? ❌ Tidak"]},
+tabung:{p:"Tabung itu seperti kaleng. Atas dan bawahnya lingkaran, di tengahnya melengkung. Tidak ada pojok yang runcing!",b:"🥫 kaleng, 🧻 gulungan tisu, 🔋 baterai",h:["Hitung yuk:","3 sisi (bawah, atas, tengah)","2 garis pinggir melengkung","0 pojok","Menggelinding? ✅ Bisa"]},
+kerucut:{p:"Kerucut itu seperti topi ulang tahun. Bawahnya lingkaran, atasnya runcing. Ujung yang runcing itu namanya titik puncak!",b:"🎉 topi ulang tahun, 🍦 cone es krim",h:["Hitung yuk:","2 sisi (bawah dan samping)","1 garis pinggir melengkung","1 titik puncak","Menggelinding? ✅ Bisa"]},
+bola:{p:"Bola itu bulat sempurna dan licin. Tidak ada garis pinggir dan tidak ada pojok. Cuma ada 1 permukaan yang melengkung!",b:"⚽ bola sepak, 🔮 kelereng, 🌍 globe",h:["Hitung yuk:","1 sisi lengkung","0 garis pinggir","0 pojok","Menggelinding? ✅ Bisa"]}};
+$("ic").innerHTML=D.map(d=>S[d.k].replace('id="rg"','id="rg0"').replace('url(#rg)','url(#rg0)')).join("");
+$("cards").innerHTML=D.map(d=>`<div class="shape" style="--c:${COL[d.k]}" onclick="this.classList.toggle('open')">${S[d.k]}<h3>${d.n}</h3>
+<span class="chip">🔗 ${d.r}</span><span class="chip">◼️ ${d.s}</span><span class="chip">📍 ${d.t}</span>
+<div class="easy"><div class="ez">🗣️ Kata mudahnya:</div><p>${EZ[d.k].p}</p><div class="bd">Contoh benda: ${EZ[d.k].b}</div><div class="cnt">${EZ[d.k].h.slice(1).map(x=>`<span>${x}</span>`).join("")}</div></div>
+<div class="ket"><p><b>💡 Keterangan:</b> ${d.e}</p></div><span class="hn">👆 Ketuk untuk detail</span></div>`).join("");
+$("tb").innerHTML=`<tr><th>Bangun</th><th>Rusuk</th><th>Sisi</th><th>Titik Sudut</th></tr>`+D.map(d=>`<tr><td><b style="color:${COL[d.k]}">${d.n}</b></td><td>${d.r}</td><td>${d.s}</td><td>${d.t}</td></tr>`).join("");
+
+const Q=[
+["Berapa banyak rusuk yang dimiliki kubus?",["6","8","12","0"],2,"Kubus memiliki 12 rusuk yang sama panjang.","Kubus memiliki 12 rusuk yang semuanya sama panjang."],
+["Semua sisi kubus berbentuk apa?",["Persegi panjang","Persegi","Lingkaran","Segitiga"],1,"Kubus punya 6 sisi berbentuk persegi yang sama luas.","Sisi kubus semuanya persegi yang sama luas, bukan bentuk lain."],
+["Balok memiliki berapa titik sudut?",["4","6","8","12"],2,"Balok memiliki 8 titik sudut, sama seperti kubus.","Balok memiliki 8 titik sudut, bukan jumlah yang lain."],
+["Pada balok, sisi yang berhadapan memiliki sifat…",["Berbeda luas","Sama luas","Berbentuk lingkaran","Tidak ada"],1,"Sisi balok yang berhadapan sama luas.","Sisi balok yang saling berhadapan sama luas."],
+["Alas dan tutup tabung berbentuk…",["Persegi","Segitiga","Lingkaran","Persegi panjang"],2,"Alas dan tutup tabung berbentuk lingkaran.","Alas dan tutup tabung berbentuk lingkaran, bukan segi-banyak."],
+["Berapa jumlah sisi tabung?",["1","2","3","6"],2,"Tabung punya 3 sisi: alas, tutup, dan selimut.","Tabung punya 3 sisi: alas, tutup, dan selimut lengkung."],
+["Bangun ruang yang TIDAK memiliki titik sudut dan rusuk adalah…",["Kubus","Kerucut","Balok","Bola"],3,"Bola tidak punya rusuk maupun titik sudut, hanya 1 sisi lengkung.","Kubus, balok, dan kerucut punya rusuk. Hanya bola yang tanpa rusuk dan titik sudut."],
+["Kerucut memiliki…",["1 titik puncak","8 titik sudut","0 sisi","12 rusuk"],0,"Kerucut memiliki 1 titik puncak, 1 rusuk lengkung, dan 2 sisi.","Kerucut hanya punya 1 titik puncak, 1 rusuk lengkung, dan 2 sisi."],
+["Bangun ruang yang memiliki 2 rusuk lengkung adalah…",["Kerucut","Bola","Tabung","Balok"],2,"Tabung punya 2 rusuk lengkung (tepi alas dan tutup).","Kerucut hanya 1 rusuk lengkung, bola tidak punya rusuk. Yang punya 2 adalah tabung."]];
+
+// ===== Peraga bagian bangun ruang =====
+const SH={kubus:{x:30,y:62,w:80,h:80,dx:36,dy:-36},balok:{x:16,y:80,w:100,h:56,dx:46,dy:-44}};
+const T=(x,y,t,c,z)=>`<text x="${x}" y="${y}" text-anchor="middle" font-family="Baloo 2,Nunito,sans-serif" font-weight="800" font-size="${z||13}" fill="${c||'#231f4d'}">${t}</text>`;
+const LN=(p,q,c,w,h)=>`<line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"${h?' stroke-dasharray="6 6" opacity=".8"':''}/>`;
+const PG=(a,c)=>`<polygon points="${a.map(p=>p.join(",")).join(" ")}" fill="${c}"/>`;
+const ct=a=>[a.reduce((t,p)=>t+p[0],0)/a.length,a.reduce((t,p)=>t+p[1],0)/a.length];
+const DT=(p,n,h)=>`<circle cx="${p[0]}" cy="${p[1]}" r="9" fill="${h?'#fef3c7':'#f59e0b'}" stroke="#92400e" stroke-width="2"${h?' stroke-dasharray="3 2"':''}><animate attributeName="r" values="9;11;9" dur="1.4s" repeatCount="indefinite"/></circle>`+T(p[0],p[1]+4,n,"#3b2100",11);
+function box(k,m){const g=SH[k],{x,y,w,h,dx,dy}=g;
+const A=[x,y],B=[x+w,y],C=[x+w,y+h],D=[x,y+h],E=[x+dx,y+dy],F=[x+w+dx,y+dy],G=[x+w+dx,y+h+dy],H=[x+dx,y+h+dy];
+const fr=[A,B,C,D],tp=[A,E,F,B],sd=[B,F,G,C];let s='<svg viewBox="0 0 200 170" class="lsv">';
+const hid=[[D,H],[G,H],[E,H]],o="#4c1d95";
+if(m==="sisi")s+=PG(fr,"#93c5fd")+PG(tp,"#fde68a")+PG(sd,"#f9a8d4");else s+=PG(fr,"#eef2ff")+PG(tp,"#f8fafc")+PG(sd,"#e5e7eb");
+if(m==="rusuk"){const R="#e11d48",Bl="#2563eb",Gr="#16a34a";
+s+=LN(D,H,Bl,5,1)+LN(G,H,Bl,5,1)+LN(E,H,Gr,5,1)+LN(A,B,R,6)+LN(B,F,R,6)+LN(F,E,R,6)+LN(E,A,R,6)+LN(D,C,Bl,6)+LN(C,G,Bl,6)+LN(A,D,Gr,6)+LN(B,C,Gr,6)+LN(F,G,Gr,6);
+s+=T(100,16,"12 rusuk = 4 + 4 + 4","#231f4d",13)}
+else{hid.forEach(e=>s+=LN(e[0],e[1],"#9ca3af",2,1));[[A,B],[B,C],[C,D],[D,A],[A,E],[E,F],[F,B],[F,G],[G,C]].forEach(e=>s+=LN(e[0],e[1],o,2.5))}
+if(m==="sisi"){s+=T(...ct(fr),"① depan","#1e3a8a",14)+T(...ct(tp),"② atas","#78350f",13)+T(...ct(sd),"③ samping","#831843",11)+T(100,164,"④⑤⑥ ada di belakang, bawah, kiri","#6b6a8f",10)}
+if(m==="titik"){[[A,1],[B,2],[C,3],[D,4],[E,5],[F,6],[G,7]].forEach(v=>s+=DT(v[0],v[1]));s+=DT(H,8,1)+T(100,164,"8 titik sudut (nomor 8 ada di belakang)","#6b6a8f",10)}
+return s+'</svg>'}
+const BASE={k:'#1f7f74'};
+function tab(m){let s='<svg viewBox="0 0 200 170" class="lsv">',b="M42 42V128A58 16 0 0 0 158 128V42",R="#e11d48";
+s+=`<path d="${b}" fill="${m==="sisi"?"#93c5fd":"#c9f5ee"}" stroke="#1f7f74" stroke-width="2.5"/><ellipse cx="100" cy="42" rx="58" ry="16" fill="${m==="sisi"?"#fde68a":"#e6fbf7"}" stroke="#1f7f74" stroke-width="2.5"/>`;
+const bk=`<path d="M42 128A58 16 0 0 1 158 128" fill="none" stroke="#e11d48" stroke-width="5" stroke-dasharray="6 6"/>`;
+if(m==="rusuk")s+=`<ellipse cx="100" cy="42" rx="58" ry="16" fill="none" stroke="${R}" stroke-width="6"/><path d="M42 128A58 16 0 0 0 158 128" fill="none" stroke="${R}" stroke-width="6" stroke-linecap="round"/>`+bk+T(100,22,"① rusuk lengkung atas",R,12)+T(100,163,"② rusuk lengkung bawah",R,12);
+if(m==="sisi")s+=`<path d="M42 128A58 16 0 0 1 158 128" fill="none" stroke="#ec4899" stroke-width="5" stroke-dasharray="6 6"/>`+T(100,46,"① tutup","#78350f",13)+T(100,92,"② selimut","#1e3a8a",15)+T(100,160,"③ alas (di bawah)","#be185d",12);
+if(m==="titik")s+=T(100,92,"0","#e11d48",46)+T(100,118,"tidak ada pojok runcing","#231f4d",12);
+return s+'</svg>'}
+function ker(m){let s='<svg viewBox="0 0 200 170" class="lsv">',b="M100 22L40 128A60 17 0 0 0 160 128Z",R="#e11d48";
+s+=`<path d="${b}" fill="${m==="sisi"?"#93c5fd":"#ffe0c8"}" stroke="#c2570f" stroke-width="2.5"/>`;
+const bk=`<path d="M40 128A60 17 0 0 1 160 128" fill="none" stroke="${m==="rusuk"?R:"#ec4899"}" stroke-width="5" stroke-dasharray="6 6"/>`;
+if(m==="rusuk")s+=`<path d="M40 128A60 17 0 0 0 160 128" fill="none" stroke="${R}" stroke-width="6" stroke-linecap="round"/>`+bk+T(100,80,"① 1 rusuk lengkung",R,13)+T(100,160,"tepi lingkaran alas",R,12);
+if(m==="sisi")s+=bk+T(100,95,"① selimut","#1e3a8a",15)+T(100,160,"② alas (lingkaran, di bawah)","#be185d",12);
+if(m==="titik")s+=`<circle cx="100" cy="22" r="10" fill="#f59e0b" stroke="#92400e" stroke-width="2"><animate attributeName="r" values="10;13;10" dur="1.4s" repeatCount="indefinite"/></circle>`+T(100,74,"titik puncak","#92400e",14)+T(100,150,"bukan titik sudut, hanya 1 puncak","#6b6a8f",11);
+return s+'</svg>'}
+function bol(m){let s='<svg viewBox="0 0 200 170" class="lsv"><defs><radialGradient id="rg2" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e5e7eb"/></radialGradient></defs>';
+s+=`<circle cx="100" cy="85" r="62" fill="${m==="sisi"?"#93c5fd":"url(#rg2)"}" stroke="#be185d" stroke-width="2.5"/>`;
+if(m==="rusuk")s+=T(100,80,"0","#e11d48",46)+T(100,106,"tidak ada garis pinggir","#231f4d",12);
+if(m==="sisi")s+=T(100,90,"① 1 sisi lengkung","#1e3a8a",14);
+if(m==="titik")s+=T(100,80,"0","#e11d48",46)+T(100,106,"tidak ada pojok","#231f4d",12);
+return s+'</svg>'}
+const CP={
+kubus:{rusuk:"<b>Rusuk</b> = garis pinggir tempat dua sisi bertemu. Kubus punya <b>12 rusuk</b> yang sama panjang: <b style='color:#e11d48'>4 di atas</b>, <b style='color:#2563eb'>4 di bawah</b>, dan <b style='color:#16a34a'>4 yang tegak</b>. Garis putus-putus = rusuk di belakang yang tidak kelihatan.",sisi:"<b>Sisi</b> = permukaan yang bisa kamu pegang. Kubus punya <b>6 sisi</b> berbentuk persegi yang sama luas: depan, belakang, atas, bawah, kiri, dan kanan. Di gambar terlihat 3 sisi (biru, kuning, pink). 3 sisi lainnya ada di belakang, bawah, dan kiri.",titik:"<b>Titik sudut</b> = pojok, tempat 3 rusuk bertemu. Kubus punya <b>8 titik sudut</b>: 4 di atas dan 4 di bawah. Yang terlihat 7 titik, 1 titik ada di belakang (putus-putus)."},
+balok:{rusuk:"Balok punya <b>12 rusuk</b>: <b style='color:#e11d48'>4 di atas</b>, <b style='color:#2563eb'>4 di bawah</b>, dan <b style='color:#16a34a'>4 yang tegak</b>. Rusuk yang sejajar sama panjang, tetapi panjang, lebar, dan tingginya boleh berbeda. Garis putus-putus = rusuk di belakang.",sisi:"Balok punya <b>6 sisi</b> berbentuk persegi panjang. Sisi yang berhadapan sama luas: depan = belakang, atas = bawah, kiri = kanan. Di gambar terlihat 3 sisi, 3 lainnya tersembunyi.",titik:"Balok punya <b>8 titik sudut</b>, sama seperti kubus: 4 di atas dan 4 di bawah. Yang terlihat 7 titik, 1 titik ada di belakang."},
+tabung:{rusuk:"Tabung punya <b>2 rusuk lengkung</b>: tepi lingkaran di atas dan tepi lingkaran di bawah. Rusuknya melengkung, bukan lurus! Garis putus-putus = bagian belakang tepi bawah.",sisi:"Tabung punya <b>3 sisi</b>: ① tutup (lingkaran di atas), ② selimut (bagian tengah yang melengkung), dan ③ alas (lingkaran di bawah). Alas dan tutup berbentuk lingkaran.",titik:"Tabung punya <b>0 titik sudut</b>. Semua pinggirnya melengkung mulus, jadi tidak ada pojok yang runcing."},
+kerucut:{rusuk:"Kerucut punya <b>1 rusuk lengkung</b>, yaitu tepi lingkaran di bagian bawah (alas). Garis putus-putus = bagian belakangnya.",sisi:"Kerucut punya <b>2 sisi</b>: ① selimut (sisi miring yang melengkung) dan ② alas yang berbentuk lingkaran.",titik:"Kerucut punya <b>1 titik puncak</b>, yaitu ujung runcing di paling atas. Kerucut tidak punya titik sudut (0 titik sudut), hanya titik puncak itu."},
+bola:{rusuk:"Bola punya <b>0 rusuk</b>. Bola bulat licin dan tidak punya garis pinggir sama sekali.",sisi:"Bola hanya punya <b>1 sisi lengkung</b>, yaitu seluruh permukaannya yang bulat.",titik:"Bola punya <b>0 titik sudut</b>. Tidak ada pojok atau ujung runcing, jadi bola bisa menggelinding ke mana saja."}};
+let cs="kubus",cm="rusuk";
+const MD=[["rusuk","🧵 Rusuk"],["sisi","🟦 Sisi"],["titik","📍 Titik Sudut"]];
+function lab(){$("lp").innerHTML=D.map(d=>`<button class="${d.k===cs?"on":""}" data-k="${d.k}">${d.n}</button>`).join("");
+$("lt").innerHTML=MD.map(x=>`<button class="${x[0]===cm?"on":""}" data-m="${x[0]}">${x[1]}</button>`).join("");
+$("lsv").innerHTML=(cs==="kubus"||cs==="balok")?box(cs,cm):cs==="tabung"?tab(cm):cs==="kerucut"?ker(cm):bol(cm);
+$("lcap").innerHTML=CP[cs][cm];
+document.querySelectorAll("#lp button").forEach(b=>b.onclick=()=>{cs=b.dataset.k;lab()});
+document.querySelectorAll("#lt button").forEach(b=>b.onclick=()=>{cm=b.dataset.m;lab()})}
+lab();
+
+// ===== Backsound (dibuat langsung oleh browser, tanpa file & bebas hak cipta) =====
+// Ingin memakai lagu sendiri? Isi dengan nama file mp3, misalnya "musik.mp3" (taruh sefolder dengan file ini).
+const MUSIC_URL = "";
+const M={ctx:null,on:false,vol:.55,lvl:1,step:0,next:0,tm:null,au:null,started:false};
+const mf=m=>440*2**((m-69)/12);
+const ROOT=[48,43,45,41],TRI=[[60,64,67],[59,62,67],[57,60,64],[57,60,65]];
+const MEL=[[76,0,0,74,72,0,74,0,76,0,79,0,76,0,0,0],[74,0,0,72,71,0,72,0,74,0,79,0,74,0,0,0],[72,0,0,74,76,0,74,0,72,0,69,0,72,0,0,0],[72,0,74,0,76,0,79,0,81,0,79,0,76,0,74,0],
+[79,0,0,76,79,0,81,0,79,0,76,0,74,0,72,0],[74,0,76,0,79,0,0,76,74,0,0,71,74,0,0,0],[76,0,0,72,76,0,81,0,79,0,76,0,72,0,0,0],[77,0,76,0,74,0,72,0,74,0,77,0,81,0,0,0]];
+function mInit(){if(M.ctx)return;const C=M.ctx=new (window.AudioContext||window.webkitAudioContext)();
+M.out=C.createGain();const cp=C.createDynamicsCompressor();M.out.connect(cp);cp.connect(C.destination);M.out.gain.value=M.vol*.5;
+const b=C.createBuffer(1,C.sampleRate,C.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;M.nz=b;
+C.onstatechange=mUI;M.next=C.currentTime+.1;M.tm=setInterval(sched,60)}
+function tone(f,t,d,ty,g,fc){const C=M.ctx,o=C.createOscillator(),e=C.createGain();o.type=ty;o.frequency.value=f;let n=o;
+if(fc){const q=C.createBiquadFilter();q.type="lowpass";q.frequency.value=fc;o.connect(q);n=q}
+e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+.012);e.gain.exponentialRampToValueAtTime(.0001,t+d);n.connect(e);e.connect(M.out);o.start(t);o.stop(t+d+.05)}
+function noise(t,d,ty,fq,g){const C=M.ctx,s=C.createBufferSource(),q=C.createBiquadFilter(),e=C.createGain();s.buffer=M.nz;q.type=ty;q.frequency.value=fq;
+e.gain.setValueAtTime(g,t);e.gain.exponentialRampToValueAtTime(.0001,t+d);s.connect(q);q.connect(e);e.connect(M.out);s.start(t,Math.random()*.5);s.stop(t+d)}
+function kick(t){const C=M.ctx,o=C.createOscillator(),e=C.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(42,t+.13);
+e.gain.setValueAtTime(.7,t);e.gain.exponentialRampToValueAtTime(.0001,t+.2);o.connect(e);e.connect(M.out);o.start(t);o.stop(t+.22)}
+function sched(){const C=M.ctx,du=60/112/4;while(M.next<C.currentTime+.25){play(M.step,M.next,du);M.next+=du;M.step=(M.step+1)%128}}
+function play(st,t,du){const bar=(st>>4)%8,ci=bar%4,s=st&15,full=M.lvl>=2;
+if(s===0)TRI[ci].forEach(n=>tone(mf(n),t,du*15,"triangle",.045,1800));
+if([0,3,6,8,11,14].includes(s))tone(mf(ROOT[ci]+(s===6||s===14?12:0)),t,du*2.6,"sawtooth",.15,full?700:420);
+const m=MEL[bar][s];if(m){tone(mf(m),t,du*2.8,"square",full?.05:.035,2600);tone(mf(m),t,du*2.8,"sine",.06)}
+if(full){if(s%2===0)tone(mf(TRI[ci][[0,1,2,1][(s>>1)%4]]+12),t,du*1.8,"triangle",.07);
+if(s%4===0)kick(t);if(s===4||s===12)noise(t,.14,"bandpass",1700,.28);
+if(s%2===0)noise(t,.04,"highpass",7500,s%4===2?.12:.06);
+if(bar%4===3&&s>=12)noise(t,.05,"highpass",6000,.1)}}
+function sfx(ok){if(!M.on||!M.ctx)return;const t=M.ctx.currentTime;
+if(ok){tone(880,t,.18,"sine",.25);tone(1318,t+.09,.3,"sine",.25);tone(1760,t+.18,.35,"triangle",.15)}else{tone(240,t,.25,"triangle",.28);tone(170,t+.14,.35,"triangle",.28)}}
+function mUI(){$("mus").classList.toggle("on",M.on);$("mb").textContent=M.on?"🔊":"🔇";$("ml").textContent=!M.on?"Musik: mati":(M.ctx&&M.ctx.state==="suspended")?"Ketuk layar untuk musik":"Musik: nyala"}
+function mPlay(){M.on=true;M.muted=false;if(MUSIC_URL){if(!M.au){M.au=new Audio(MUSIC_URL);M.au.loop=true}M.au.volume=M.vol;M.au.play().catch(()=>{})}
+else{mInit();M.ctx.resume()}mUI()}
+function mStop(){M.on=false;M.muted=true;if(M.au)M.au.pause();if(M.ctx)M.ctx.suspend();mUI()}
+function musicStart(){if(!M.started){M.started=true;mPlay()}}
+function setMood(i){M.lvl=i>=2?2:1}
+$("mb").onclick=()=>{M.started=true;M.on?mStop():mPlay()};
+$("mv").oninput=e=>{M.vol=e.target.value/100;if(M.out)M.out.gain.value=M.vol*.5;if(M.au)M.au.volume=M.vol};
+document.addEventListener("visibilitychange",()=>{if(!M.on)return;if(document.hidden){M.au?M.au.pause():M.ctx&&M.ctx.suspend()}else{M.au?M.au.play():M.ctx&&M.ctx.resume()}});
+mUI();
+// Tombol musik disembunyikan. Guru bisa menekan huruf M di keyboard untuk mematikan/menyalakan musik.
+addEventListener('keydown',e=>{if(e.key.toLowerCase()==='m'&&!/INPUT|TEXTAREA/.test(e.target.tagName)){M.started=true;M.on?mStop():mPlay()}});
+// Musik langsung diputar saat halaman dibuka. Jika browser memblokir suara,
+// musik otomatis mulai pada sentuhan/klik/tombol pertama di mana saja.
+const EV=["pointerdown","keydown","touchstart"];
+function gest(e){if(e.target.closest&&e.target.closest("#mus"))return;if(!M.on||M.muted)return;
+if(M.au)M.au.play().catch(()=>{});else if(M.ctx)M.ctx.resume();EV.forEach(t=>removeEventListener(t,gest,true))}
+EV.forEach(t=>addEventListener(t,gest,true));
+M.started=true;try{mPlay()}catch(e){}
+const st=["s1","s2","s3","s4"];let qi=0,ok=0,nama="",kelas="",res=[];
+function show(i,p){setMood(i);st.forEach((s,j)=>$(s).classList.toggle("on",j===i));
+[...$("stp").children].forEach((e,j)=>{e.className=j===i?"on":j<i?"dn":""});
+$("pb").style.width=(p??[10,35,35,100][i])+"%";scrollTo({top:0,behavior:"smooth"})}
+show(0);
+function modal(good,i,t,x,cb){$("mbx").className="mb"+(good?"":" bad");$("mi").textContent=i;$("mt").textContent=t;$("mx").textContent=x;$("md").classList.add("on");$("mc").onclick=()=>{$("md").classList.remove("on");cb&&cb()}}
+function chk(){$("go").disabled=!($("nm").value.trim()&&$("kl").value.trim())}
+$("nm").oninput=$("kl").oninput=chk;
+$("go").onclick=()=>{nama=$("nm").value.trim();kelas=$("kl").value.trim();musicStart();show(1);watch()};
+function watch(){const f=()=>{const r=$("end").getBoundingClientRect();if(r.top<innerHeight){$("toq").disabled=false;$("hint").textContent="✅ Materi selesai dibaca! Siap untuk kuis?";removeEventListener("scroll",f)}};addEventListener("scroll",f);setTimeout(f,400)}
+$("toq").onclick=()=>{show(2,35);ask()};
+function dots(){$("dots").innerHTML=Q.map((_,i)=>`<i class="${res[i]??(i===qi?"now":"")}"></i>`).join("")}
+function ask(){const q=Q[qi];$("qn").textContent=`Soal ${qi+1} dari ${Q.length}`;$("qt").textContent=q[0];$("nx").style.display="none";dots();
+$("pb").style.width=(35+(qi/Q.length)*60)+"%";
+$("qo").innerHTML=q[1].map((o,i)=>`<button class="opt" style="animation-delay:${i*.07}s" data-i="${i}"><b>${"ABCD"[i]}</b>${o}</button>`).join("");
+document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.i))}
+function pick(i){const q=Q[qi],right=i===q[2];sfx(right);if(right){ok++;$("pt").textContent="⭐ "+ok;confetti(40)}
+res[qi]=right?"c":"w";dots();
+document.querySelectorAll(".opt").forEach((b,j)=>{b.disabled=true;if(j===q[2])b.classList.add("c");else if(j===i)b.classList.add("w")});
+modal(right,right?"✅":"❌",right?"Benar!":"Salah",(right?"":`Jawaban yang benar: ${q[1][q[2]]}. `)+(right?q[3]:q[4]),()=>{$("nx").style.display="inline-block";$("nx").textContent=qi===Q.length-1?"Lihat Hasil 🏆":"Soal Selanjutnya ➡️"})}
+$("nx").onclick=()=>{if(++qi<Q.length)ask();else finish()};
+function finish(){const n=Q.length,sk=Math.round(ok/n*100);show(3);
+$("rn").textContent=nama;$("rk").textContent="Kelas "+kelas;$("rb").textContent="✅ Benar: "+ok;$("rw").textContent="❌ Salah: "+(n-ok);
+const [e,m]=sk>=90?["🏆","Luar biasa! Kamu jagoan bangun ruang!"]:sk>=70?["🌟","Bagus sekali! Sedikit lagi sempurna, tetap semangat!"]:sk>=50?["💪","Lumayan! Yuk baca materi sekali lagi supaya makin paham."]:["🌱","Jangan menyerah! Ulangi materinya dan coba lagi ya."];
+$("em").textContent=e;$("ms").textContent=m;
+const ns=sk>=90?3:sk>=70?2:sk>=50?1:0;[...$("stars").children].forEach((s,i)=>setTimeout(()=>s.classList.toggle("on",i<ns),500+i*350));
+let c=0;const iv=setInterval(()=>{c+=Math.ceil(sk/30);if(c>=sk){c=sk;clearInterval(iv)}$("sc").textContent=c},35);
+if(sk>=50)setTimeout(()=>confetti(160),400);kirim(sk)}
+function kirim(sk){const nt=$("note");
+if(!SHEET_URL){nt.textContent="ℹ️ Rekap belum dikirim: URL Google Apps Script belum diisi.";return}
+nt.textContent="⏳ Mengirim nilai ke guru...";
+fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},
+body:JSON.stringify({timestamp:new Date().toLocaleString("id-ID",{timeZone:"Asia/Makassar"}),nama,kelas,skor:sk})})
+.then(()=>nt.textContent="✅ Nilaimu sudah terkirim ke guru!").catch(()=>nt.textContent="⚠️ Gagal mengirim. Periksa koneksi internet.")}
+// konfeti
+const cv=$("cf"),cx=cv.getContext("2d");let P=[],run=false;
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener("resize",rs);
+function confetti(n){for(let i=0;i<n;i++)P.push({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*.4,vx:(Math.random()-.5)*14,vy:-Math.random()*13-3,s:5+Math.random()*7,c:`hsl(${Math.random()*360},85%,60%)`,r:Math.random()*6,l:110});if(!run){run=true;tick()}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l-->0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.vx*=.99;p.r+=.2;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.globalAlpha=Math.min(1,p.l/30);cx.fillRect(-p.s/2,-p.s/3,p.s,p.s*.6);cx.restore()});P.length?requestAnimationFrame(tick):(run=false,cx.clearRect(0,0,cv.width,cv.height))}
+</script></body></html>
